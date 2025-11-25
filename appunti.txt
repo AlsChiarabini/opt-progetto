@@ -1,0 +1,19 @@
+f_ij = variabile che rappresenta il flusso
+x_ij = variabile binaria usata per indicare se l'arco (i,j) è attivo
+u_ij = flusso massimo che può attraversare quell'arco
+z = variabile che cattura il flusso totale da s a t
+
+funzione obiettivo = massimizzare z
+Ho però dei vincoli:
+
+    CONSERVAZIONE DEL FLUSSO E FLUSSO TOTALE
+    1. La sommatoria del flusso in entrata ed uscita da ogni nodo deve 
+    essere bilanciata, quindi deve fare 0, tranne per s e per t, 
+    dove abbiamo -z e +z
+
+    ATTIVAZIONE DELLA VARIABILE BINARIA
+    2. f_ij < u_ij * x_ij, questo mi lega il flusso all'attivazione
+ 
+    3. VINCOLI DI CONFLITTO
+    x_ij + x_kl <=1, questo indica che, se gli archi sono in conflitto, 
+    solo uno dei due può essere attivo. 
